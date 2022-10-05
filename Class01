@@ -1,52 +1,50 @@
-package ch08;
+package Java111Q1;
+
+import Java111Q1.Cal_area;
 
 class Cal_area {
-	String color;
-	String color1;
-	String color2;
-	double pi = 3.14;
-	double radius;
-	double x;
-	double y;
-	double z;
+    int length;
+    int width;
+    int height;
+    int radius;
 
-	void setColor(String str) {
-		color = str;
-	}
+    void showData1() {
+        System.out.println("長 = " + length);
+        System.out.println("寬 = " + width);
+        System.out.println("高 = " + height);
+    }
 
-	void setRadius(double r) {
-		radius = r;
-	}
+    void showData2() {
+        System.out.println("半徑 =" + radius);
+    }
 
-	void setAll(String str,String str1,String str2, double r,double r1,double r2) {
-		color = str;
-		color1 = str1;
-		color2 = str2;
-		x = r;
-		y = r1;
-		z = r2;
-	}
+    void surfaceArea() {
+        System.out.println("立方體表面積 = " + ((length * width + length * height + height * width) * 2));
+    }
 
-	void show() {
-		System.out.println(color +"=" + radius);
-		System.out.printf("球形體機=" + pi * radius * radius * radius*4/3);
-		System.out.println(color +"=" + x + color1 +"=" + y +color2 +"=" + z);
-		System.out.printf("立方體表面積=" + (x*y+y*z+z*x)*2);
-	}
+    void volume() {
+        System.out.printf("球形體積 = " + "%.1f", ((double) 3.14159 * radius * radius * radius * 4 / 3));
+        System.out.println();
+    }
+
+    void showAll() {
+        showData2();
+        volume();
+        showData1();
+        surfaceArea();
+    }
+
 }
 
 public class Class01 {
 
-	public static void main(String[] args) {
-		Cal_area cir1 = new Cal_area();
-
-		cir1.setColor("半徑");
-		cir1.setRadius(10);
-		cir1.show();
-		
-		cir1.setAll("長","寬","高",4,5,6);
-		cir1.show();
-
-	}
+    public static void main(String args[]) {
+        Cal_area area = new Cal_area();
+        area.length = 4;
+        area.width = 5;
+        area.height = 6;
+        area.radius = 10;
+        area.showAll();
+    }
 
 }
